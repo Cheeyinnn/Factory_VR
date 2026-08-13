@@ -492,7 +492,7 @@ GameObject:
   - component: {fileID: 20253446}
   - component: {fileID: 20253449}
   - component: {fileID: 20253448}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Magnet_Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -625,7 +625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 21584097}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1453,7 +1453,7 @@ GameObject:
   - component: {fileID: 155861225}
   - component: {fileID: 155861227}
   - component: {fileID: 155861226}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Fluresscent Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3250,7 +3250,7 @@ GameObject:
   - component: {fileID: 341662331}
   - component: {fileID: 341662332}
   - component: {fileID: 341662333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4749,7 +4749,7 @@ GameObject:
   - component: {fileID: 636770240}
   - component: {fileID: 636770241}
   - component: {fileID: 636770246}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5086,7 +5086,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682637717}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Change Height
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6137,7 +6137,7 @@ GameObject:
   - component: {fileID: 758957542}
   - component: {fileID: 758957541}
   - component: {fileID: 758957540}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6242,7 +6242,7 @@ GameObject:
   - component: {fileID: 760016361}
   - component: {fileID: 760016364}
   - component: {fileID: 760016363}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SpawnBoxes_Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6657,7 +6657,7 @@ GameObject:
   - component: {fileID: 839034729}
   - component: {fileID: 839034732}
   - component: {fileID: 839034731}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ClearBoxes_Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11637,7 +11637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 842918409}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ControlsSetup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13089,7 +13089,7 @@ GameObject:
   - component: {fileID: 1131438067}
   - component: {fileID: 1131438066}
   - component: {fileID: 1131438065}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13254,7 +13254,7 @@ GameObject:
   - component: {fileID: 1183348334}
   - component: {fileID: 1183348337}
   - component: {fileID: 1183348336}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MoveLateral_Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14687,7 +14687,7 @@ GameObject:
   - component: {fileID: 1349093510}
   - component: {fileID: 1349093513}
   - component: {fileID: 1349093512}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ConsoleUpDown_Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14899,7 +14899,7 @@ GameObject:
   - component: {fileID: 1358910987}
   - component: {fileID: 1358910990}
   - component: {fileID: 1358910989}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rotate_Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15433,7 +15433,7 @@ GameObject:
   - component: {fileID: 1458439794}
   - component: {fileID: 1458439797}
   - component: {fileID: 1458439796}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MoveVertical_Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15571,7 +15571,7 @@ GameObject:
   - component: {fileID: 1490798834}
   - component: {fileID: 1490798833}
   - component: {fileID: 1490798832}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16528,6 +16528,42 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 259193821}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 842918408}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: set_layer
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1719633266}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 243225247}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -17771,7 +17807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1718703367}
   - component: {fileID: 1718703368}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Controls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18704,7 +18740,7 @@ GameObject:
   - component: {fileID: 1763211932}
   - component: {fileID: 1763211931}
   - component: {fileID: 1763211930}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18893,7 +18929,7 @@ GameObject:
   - component: {fileID: 1784819656}
   - component: {fileID: 1784819655}
   - component: {fileID: 1784819654}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Console_Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19574,7 +19610,7 @@ GameObject:
   - component: {fileID: 1865789078}
   - component: {fileID: 1865789077}
   - component: {fileID: 1865789076}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19905,7 +19941,7 @@ GameObject:
   - component: {fileID: 1963046886}
   - component: {fileID: 1963046885}
   - component: {fileID: 1963046888}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas_Labels
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20740,7 +20776,7 @@ GameObject:
   - component: {fileID: 2115832766}
   - component: {fileID: 2115832767}
   - component: {fileID: 2115832768}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29153,7 +29189,7 @@ GameObject:
   - component: {fileID: 3728792975646475013}
   - component: {fileID: 3728792975646475012}
   - component: {fileID: 3728792975646475011}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29344,7 +29380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4502080887094448760}
   - component: {fileID: 774548518}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Knob
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29364,7 +29400,7 @@ GameObject:
   - component: {fileID: 4502080888245813407}
   - component: {fileID: 4502080888245813406}
   - component: {fileID: 1817975535}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29565,7 +29601,7 @@ GameObject:
   - component: {fileID: 5238779549397348333}
   - component: {fileID: 5238779549397348332}
   - component: {fileID: 4379610829539732495}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31575,7 +31611,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6324349190692529315}
   - component: {fileID: 3386109985780108195}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Joystick_Raise
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31608,7 +31644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6324349190722330087}
   - component: {fileID: 3386109985877062375}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Joystick_Move
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31659,7 +31695,7 @@ GameObject:
   - component: {fileID: 6324349191514200591}
   - component: {fileID: 6324349191514200588}
   - component: {fileID: 6324349191514200589}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31836,7 +31872,7 @@ GameObject:
   - component: {fileID: 6324349191551378251}
   - component: {fileID: 6324349191551378248}
   - component: {fileID: 6324349191551378249}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31942,7 +31978,7 @@ GameObject:
   - component: {fileID: 6324349191611299584}
   - component: {fileID: 6324349191611299585}
   - component: {fileID: 819213588}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31977,7 +32013,7 @@ GameObject:
   - component: {fileID: 6324349191716621892}
   - component: {fileID: 6324349191716621893}
   - component: {fileID: 916278352}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32771,7 +32807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7509008427246001996}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33588,7 +33624,7 @@ GameObject:
   - component: {fileID: 7863669396577847637}
   - component: {fileID: 3016069959630375334}
   - component: {fileID: 839586645}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Move Up Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33695,7 +33731,7 @@ GameObject:
   - component: {fileID: 7863669396962942829}
   - component: {fileID: 7863669396962942828}
   - component: {fileID: 828729823330240265}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33738,7 +33774,7 @@ GameObject:
   - component: {fileID: 7863669397097375295}
   - component: {fileID: 7863669397097375294}
   - component: {fileID: 828729823463505499}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33834,7 +33870,7 @@ GameObject:
   - component: {fileID: 7863669397134400381}
   - component: {fileID: 3016069960143379342}
   - component: {fileID: 1824525328}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Reset Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33941,7 +33977,7 @@ GameObject:
   - component: {fileID: 7863669397814863509}
   - component: {fileID: 7863669397814863508}
   - component: {fileID: 828729824105496305}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33974,7 +34010,7 @@ GameObject:
   - component: {fileID: 7863669397899538605}
   - component: {fileID: 3016069961546575966}
   - component: {fileID: 1086352045}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Move Down Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34008,7 +34044,7 @@ GameObject:
   - component: {fileID: 7863669398301968895}
   - component: {fileID: 3016069961412692236}
   - component: {fileID: 131723510}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spawn Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34115,7 +34151,7 @@ GameObject:
   - component: {fileID: 7863669398332060861}
   - component: {fileID: 7863669398332060860}
   - component: {fileID: 828729824665677017}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34473,7 +34509,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9152294701084620517}
   - component: {fileID: 5754956525560203020}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Lever
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34596,7 +34632,7 @@ GameObject:
   - component: {fileID: 9152294701888420775}
   - component: {fileID: 9152294701888420774}
   - component: {fileID: 9152294701888420777}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
