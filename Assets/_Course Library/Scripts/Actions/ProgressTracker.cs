@@ -19,7 +19,6 @@ public class ProgressTracker : MonoBehaviour
 
     void Start()
     {
-        // Start at 0%
         if (progressBar != null)
         {
             progressBar.minValue = 0f;
@@ -40,24 +39,22 @@ public class ProgressTracker : MonoBehaviour
         }
     }
 
-    // Called when Dump Boxes button is pressed
+    // Start timer when Dump Boxes is pressed
     public void StartTimer()
     {
         if (!timerRunning && completedBoxes < totalBoxes)
         {
             timerRunning = true;
-            Debug.Log("Timer started!");
         }
     }
 
-    // Called when a box is successfully placed on the platform
+    // Called when a box is placed on the platform
     public void BoxCompleted()
     {
         if (completedBoxes >= totalBoxes)
             return;
 
         completedBoxes++;
-
         UpdateUI();
 
         if (completedBoxes >= totalBoxes)
@@ -67,23 +64,33 @@ public class ProgressTracker : MonoBehaviour
         }
     }
 
+    // Called when Reset Button is pressed
+    public void ResetProgress()
+    {
+        completedBoxes = 0;
+        elapsedTime = 0f;
+        timerRunning = false;
+
+        UpdateUI();
+        UpdateTimer();
+
+        statusText.text = "Keep Going!";
+    }
+
     void UpdateUI()
     {
-        // Update box count
         if (boxCountText != null)
         {
             boxCountText.text =
                 "Boxes: " + completedBoxes + " / " + totalBoxes;
         }
 
-        // Update progress bar
         if (progressBar != null)
         {
             float progress = (float)completedBoxes / totalBoxes;
             progressBar.value = progress;
         }
 
-        // Update status
         if (statusText != null && completedBoxes < totalBoxes)
         {
             statusText.text = "Keep Going!";
