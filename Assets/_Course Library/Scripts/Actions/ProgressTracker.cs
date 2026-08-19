@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
 
 public class ProgressTracker : MonoBehaviour
 {
@@ -21,7 +20,6 @@ public class ProgressTracker : MonoBehaviour
 
     [Header("Leaderboard")]
     public LeaderboardManager leaderboardManager;
-    public TMP_InputField playerNameInput;
 
     [Header("Challenge Start")]
     public GameObject boxBlocker;
@@ -54,19 +52,7 @@ public class ProgressTracker : MonoBehaviour
     // Called when Dump Boxes button is pressed
     public void StartTimer()
     {
-        // Player must enter a name first
-        if (playerNameInput == null ||
-            string.IsNullOrWhiteSpace(playerNameInput.text))
-        {
-            if (statusText != null)
-            {
-                statusText.text = "Enter your name first!";
-            }
-
-            return;
-        }
-
-        // Start challenge only if it is not already running
+        // Prevent starting again while challenge is already running
         if (!timerRunning && completedBoxes < totalBoxes)
         {
             timerRunning = true;
@@ -76,7 +62,7 @@ public class ProgressTracker : MonoBehaviour
                 statusText.text = "Keep Going!";
             }
 
-            // Release / dump the boxes
+            // Release the boxes
             if (boxBlocker != null)
             {
                 boxBlocker.SetActive(false);
@@ -84,7 +70,7 @@ public class ProgressTracker : MonoBehaviour
         }
     }
 
-    // Called when ONE box is successfully completed
+    // Called when one box is successfully placed
     public void BoxCompleted()
     {
         if (completedBoxes >= totalBoxes)
@@ -104,13 +90,13 @@ public class ProgressTracker : MonoBehaviour
     {
         timerRunning = false;
 
-        // Add player's result to leaderboard
+        // Record result in leaderboard
         if (leaderboardManager != null)
         {
             leaderboardManager.AddScore(elapsedTime);
         }
 
-        // Final box result
+        // Final box count
         if (finalBoxText != null)
         {
             finalBoxText.text =
@@ -147,13 +133,13 @@ public class ProgressTracker : MonoBehaviour
             }
         }
 
-        // Hide normal progress panel
+        // Hide progress UI
         if (progressPanel != null)
         {
             progressPanel.SetActive(false);
         }
 
-        // Show completion panel
+        // Show completion UI
         if (completionPanel != null)
         {
             completionPanel.SetActive(true);
@@ -162,55 +148,40 @@ public class ProgressTracker : MonoBehaviour
 
     // Called by Reset Button
     public void ResetProgress()
-{
-    completedBoxes = 0;
-    elapsedTime = 0f;
-    timerRunning = false;
-
-    // Show normal progress panel
-    if (progressPanel != null)
     {
-        progressPanel.SetActive(true);
+        completedBoxes = 0;
+        elapsedTime = 0f;
+        timerRunning = false;
+
+        // Show progress panel
+        if (progressPanel != null)
+        {
+            progressPanel.SetActive(true);
+        }
+
+        // Hide completion panel
+        if (completionPanel != null)
+        {
+            completionPanel.SetActive(false);
+        }
+
+        // Hold the boxes again until Dump Boxes is pressed
+        if (boxBlocker != null)
+        {
+            boxBlocker.SetActive(true);
+        }
+
+        // Reset progress bar
+        if (progressBar != null)
+        {
+            progressBar.minValue = 0f;
+            progressBar.maxValue = 1f;
+            progressBar.value = 0f;
+        }
+
+        UpdateProgressUI();
+        UpdateTimer();
     }
-
-    // Hide completion panel
-    if (completionPanel != null)
-    {
-        completionPanel.SetActive(false);
-    }
-
-    // Turn BoxBlocker back on
-    if (boxBlocker != null)
-    {
-        boxBlocker.SetActive(true);
-    }
-
-    // Clear previous player's name
-    if (playerNameInput != null)
-    {
-        playerNameInput.text = "";
-
-        // Stop the input field from capturing keyboard input
-        playerNameInput.DeactivateInputField();
-    }
-
-    // Remove UI selection/focus
-    if (EventSystem.current != null)
-    {
-        EventSystem.current.SetSelectedGameObject(null);
-    }
-
-    // Reset progress bar
-    if (progressBar != null)
-    {
-        progressBar.minValue = 0f;
-        progressBar.maxValue = 1f;
-        progressBar.value = 0f;
-    }
-
-    UpdateProgressUI();
-    UpdateTimer();
-}
 
     private void UpdateProgressUI()
     {

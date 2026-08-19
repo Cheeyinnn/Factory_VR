@@ -4,9 +4,6 @@ using System.Collections.Generic;
 
 public class LeaderboardManager : MonoBehaviour
 {
-    [Header("Player Input")]
-    public TMP_InputField playerNameInput;
-
     [Header("Leaderboard UI")]
     public TMP_Text rank1Text;
     public TMP_Text rank2Text;
@@ -28,6 +25,9 @@ public class LeaderboardManager : MonoBehaviour
 
     private List<ScoreEntry> scores = new List<ScoreEntry>();
 
+    // Keeps track of how many players have played
+    private int playerNumber = 1;
+
     void Start()
     {
         UpdateLeaderboard();
@@ -35,20 +35,19 @@ public class LeaderboardManager : MonoBehaviour
 
     public void AddScore(float time)
     {
-        string playerName = playerNameInput.text;
+        // Automatically create player name
+        string playerName = "Player " + playerNumber;
 
-        // If player did not enter a name
-        if (string.IsNullOrWhiteSpace(playerName))
-        {
-            playerName = "Player";
-        }
+        // Next completed attempt becomes next player
+        playerNumber++;
 
+        // Add result
         scores.Add(new ScoreEntry(playerName, time));
 
-        // Fastest time first
+        // Sort fastest to slowest
         scores.Sort((a, b) => a.time.CompareTo(b.time));
 
-        // Only keep top 5
+        // Only keep the fastest Top 5
         if (scores.Count > 5)
         {
             scores.RemoveAt(scores.Count - 1);
@@ -89,14 +88,6 @@ public class LeaderboardManager : MonoBehaviour
                 rankTexts[i].text =
                     (i + 1) + ". ---";
             }
-        }
-    }
-
-    public void ClearPlayerName()
-    {
-        if (playerNameInput != null)
-        {
-            playerNameInput.text = "";
         }
     }
 }
