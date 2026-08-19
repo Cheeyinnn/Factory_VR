@@ -20108,9 +20108,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b8ba7dd0f8e2f45fdb360cb8df91de01, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c550570d29e34e24fa7f75983cd0ba0d, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -29129,7 +29129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab6d3e7b225a7342a0d702b6151692b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: f3d02eed8de884b8f8e2df103802faf5, type: 3}
+  sound: {fileID: 8300000, guid: f897fb1f797cece44accd975c980d8e4, type: 3}
   playOnStart: 0
   volume: 1
 --- !u!82 &1145393436748058494
@@ -29142,11 +29142,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a6e6cb127e7044a3eaa8772d8a314706, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -29240,13 +29240,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a895b5e674db04d8b4f8110c068852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldLoop: 0
+  shouldLoop: 1
   audioClips:
-  - {fileID: 8300000, guid: b8ba7dd0f8e2f45fdb360cb8df91de01, type: 3}
-  - {fileID: 8300000, guid: 9b1ecbe797fdd40e0bfc0900b6ad0400, type: 3}
-  - {fileID: 8300000, guid: f3c16f48623484a42b8624861a87ca11, type: 3}
-  - {fileID: 8300000, guid: be8221a34ec964baca77aa1158dd9a81, type: 3}
-  - {fileID: 8300000, guid: 5ba88ca933c5b4e579c5e971949a6295, type: 3}
+  - {fileID: 8300000, guid: b314d765cfb4862448426bd2b9f2ec13, type: 3}
 --- !u!65 &1145393438020323227
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37335,7 +37331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab6d3e7b225a7342a0d702b6151692b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: f3d02eed8de884b8f8e2df103802faf5, type: 3}
+  sound: {fileID: 8300000, guid: aa5f294b92a6b0b48bd5c8a641c6675a, type: 3}
   playOnStart: 0
   volume: 1
 --- !u!4 &4067175753596782605
@@ -37365,7 +37361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab6d3e7b225a7342a0d702b6151692b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sound: {fileID: 8300000, guid: f3d02eed8de884b8f8e2df103802faf5, type: 3}
+  sound: {fileID: 8300000, guid: 14b426929bcb78e4cb580ce43416a4ea, type: 3}
   playOnStart: 0
   volume: 1
 --- !u!54 &4379610829539732495
