@@ -16,9 +16,11 @@ public class PlatformBoxDetector : MonoBehaviour
 
         GameObject box = rb.gameObject;
 
+        // Only count objects with the Box tag
         if (!box.CompareTag("Box"))
             return;
 
+        // Prevent the same box from being counted twice
         if (countedBoxes.Contains(box))
             return;
 
@@ -29,5 +31,13 @@ public class PlatformBoxDetector : MonoBehaviour
             progressTracker.BoxCompleted();
             Debug.Log("Box counted: " + box.name);
         }
+    }
+
+    // Called when the Reset Button is pressed
+    public void ResetDetector()
+    {
+        countedBoxes.Clear();
+
+        Debug.Log("Platform box detector reset.");
     }
 }

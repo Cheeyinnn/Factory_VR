@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class ProgressTracker : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ProgressTracker : MonoBehaviour
     public TMP_Text boxCountText;
     public TMP_Text timerText;
     public TMP_Text statusText;
+    public TMP_Text percentageText;
     public Slider progressBar;
 
     [Header("Completion UI")]
@@ -16,6 +18,13 @@ public class ProgressTracker : MonoBehaviour
     public TMP_Text finalBoxText;
     public TMP_Text finalTimeText;
     public TMP_Text ratingText;
+
+    [Header("Leaderboard")]
+    public LeaderboardManager leaderboardManager;
+    public TMP_InputField playerNameInput;
+
+    [Header("Challenge Start")]
+    public GameObject boxBlocker;
 
     [Header("Progress Settings")]
     public int totalBoxes = 5;
@@ -42,16 +51,40 @@ public class ProgressTracker : MonoBehaviour
         }
     }
 
-    // Call this when the Dump Boxes button is pressed
+    // Called when Dump Boxes button is pressed
     public void StartTimer()
     {
+        // Player must enter a name first
+        if (playerNameInput == null ||
+            string.IsNullOrWhiteSpace(playerNameInput.text))
+        {
+            if (statusText != null)
+            {
+                statusText.text = "Enter your name first!";
+            }
+
+            return;
+        }
+
+        // Start challenge only if it is not already running
         if (!timerRunning && completedBoxes < totalBoxes)
         {
             timerRunning = true;
+
+            if (statusText != null)
+            {
+                statusText.text = "Keep Going!";
+            }
+
+            // Release / dump the boxes
+            if (boxBlocker != null)
+            {
+                boxBlocker.SetActive(false);
+            }
         }
     }
 
-    // Call this when ONE box is successfully completed
+    // Called when ONE box is successfully completed
     public void BoxCompleted()
     {
         if (completedBoxes >= totalBoxes)
@@ -70,6 +103,12 @@ public class ProgressTracker : MonoBehaviour
     private void CompleteChallenge()
     {
         timerRunning = false;
+
+        // Add player's result to leaderboard
+        if (leaderboardManager != null)
+        {
+            leaderboardManager.AddScore(elapsedTime);
+        }
 
         // Final box result
         if (finalBoxText != null)
@@ -108,12 +147,13 @@ public class ProgressTracker : MonoBehaviour
             }
         }
 
-        // Switch panels
+        // Hide normal progress panel
         if (progressPanel != null)
         {
             progressPanel.SetActive(false);
         }
 
+        // Show completion panel
         if (completionPanel != null)
         {
             completionPanel.SetActive(true);
@@ -122,34 +162,55 @@ public class ProgressTracker : MonoBehaviour
 
     // Called by Reset Button
     public void ResetProgress()
+{
+    completedBoxes = 0;
+    elapsedTime = 0f;
+    timerRunning = false;
+
+    // Show normal progress panel
+    if (progressPanel != null)
     {
-        completedBoxes = 0;
-        elapsedTime = 0f;
-        timerRunning = false;
-
-        // Show normal progress panel
-        if (progressPanel != null)
-        {
-            progressPanel.SetActive(true);
-        }
-
-        // Hide completion panel
-        if (completionPanel != null)
-        {
-            completionPanel.SetActive(false);
-        }
-
-        // Reset progress bar
-        if (progressBar != null)
-        {
-            progressBar.minValue = 0f;
-            progressBar.maxValue = 1f;
-            progressBar.value = 0f;
-        }
-
-        UpdateProgressUI();
-        UpdateTimer();
+        progressPanel.SetActive(true);
     }
+
+    // Hide completion panel
+    if (completionPanel != null)
+    {
+        completionPanel.SetActive(false);
+    }
+
+    // Turn BoxBlocker back on
+    if (boxBlocker != null)
+    {
+        boxBlocker.SetActive(true);
+    }
+
+    // Clear previous player's name
+    if (playerNameInput != null)
+    {
+        playerNameInput.text = "";
+
+        // Stop the input field from capturing keyboard input
+        playerNameInput.DeactivateInputField();
+    }
+
+    // Remove UI selection/focus
+    if (EventSystem.current != null)
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    // Reset progress bar
+    if (progressBar != null)
+    {
+        progressBar.minValue = 0f;
+        progressBar.maxValue = 1f;
+        progressBar.value = 0f;
+    }
+
+    UpdateProgressUI();
+    UpdateTimer();
+}
 
     private void UpdateProgressUI()
     {
@@ -159,18 +220,27 @@ public class ProgressTracker : MonoBehaviour
                 "Boxes: " + completedBoxes + " / " + totalBoxes;
         }
 
-        if (statusText != null)
+        if (statusText != null && completedBoxes < totalBoxes)
         {
-            if (completedBoxes < totalBoxes)
-            {
-                statusText.text = "Keep Going!";
-            }
+            statusText.text = "Keep Going!";
+        }
+
+        float progress = 0f;
+
+        if (totalBoxes > 0)
+        {
+            progress = (float)completedBoxes / totalBoxes;
         }
 
         if (progressBar != null)
         {
-            progressBar.value =
-                (float)completedBoxes / totalBoxes;
+            progressBar.value = progress;
+        }
+
+        if (percentageText != null)
+        {
+            percentageText.text =
+                (progress * 100f).ToString("F0") + "%";
         }
     }
 
