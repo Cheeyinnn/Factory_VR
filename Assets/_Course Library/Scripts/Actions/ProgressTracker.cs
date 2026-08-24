@@ -99,8 +99,7 @@ public class ProgressTracker : MonoBehaviour
         // Final box count
         if (finalBoxText != null)
         {
-            finalBoxText.text =
-                "Boxes: " + completedBoxes + " / " + totalBoxes;
+            finalBoxText.text = completedBoxes + " / " + totalBoxes;
         }
 
         // Final time
@@ -110,10 +109,7 @@ public class ProgressTracker : MonoBehaviour
         if (finalTimeText != null)
         {
             finalTimeText.text =
-                "Time: " +
-                minutes.ToString("00") +
-                ":" +
-                seconds.ToString("00");
+                minutes.ToString("00") + ":" + seconds.ToString("00");
         }
 
         // Rating
@@ -187,8 +183,7 @@ public class ProgressTracker : MonoBehaviour
     {
         if (boxCountText != null)
         {
-            boxCountText.text =
-                "Boxes: " + completedBoxes + " / " + totalBoxes;
+            boxCountText.text = completedBoxes + " / " + totalBoxes;
         }
 
         if (statusText != null && completedBoxes < totalBoxes)
@@ -222,11 +217,7 @@ public class ProgressTracker : MonoBehaviour
 
         if (timerText != null)
         {
-            timerText.text =
-                "Time: " +
-                minutes.ToString("00") +
-                ":" +
-                seconds.ToString("00");
+            timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
         }
     }
 }
