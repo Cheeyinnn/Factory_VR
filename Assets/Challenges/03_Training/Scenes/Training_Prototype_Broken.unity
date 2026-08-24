@@ -1045,6 +1045,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -1105,6 +1110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.size
@@ -2023,6 +2033,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -2083,6 +2098,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4213,7 +4233,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &327365067
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4252,6 +4272,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -4312,6 +4337,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7693,6 +7723,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -7753,6 +7788,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14994,6 +15034,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -15054,6 +15099,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16178,6 +16228,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -16238,6 +16293,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16484,6 +16544,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -16544,6 +16609,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18003,7 +18073,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24612,6 +24682,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -24672,6 +24747,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26056,6 +26136,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -26116,6 +26201,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37058,6 +37148,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1736730001}
+    - target: {fileID: 2085702217920827848, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: sound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     - target: {fileID: 2361221234566090267, guid: 97e89670ed7696d489d6ddba4543a01b,
         type: 3}
       propertyPath: m_RootOrder
@@ -37118,6 +37213,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box (0)
       objectReference: {fileID: 0}
+    - target: {fileID: 8312855220770769008, guid: 97e89670ed7696d489d6ddba4543a01b,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7096c237e384d435ab4bf80e18bf6a18, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
