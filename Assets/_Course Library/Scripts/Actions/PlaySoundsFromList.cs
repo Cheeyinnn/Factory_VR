@@ -23,36 +23,47 @@ public class PlaySoundsFromList : MonoBehaviour
 
     public void NextClip()
     {
-        index = ++index % audioClips.Count;
+        if (audioClips == null || audioClips.Count == 0) return;
+        index = (index + 1) % audioClips.Count;
         PlayClip();
     }
 
     public void PreviousClip()
     {
-        index = --index % audioClips.Count;
+        if (audioClips == null || audioClips.Count == 0) return;
+        index = (index - 1 + audioClips.Count) % audioClips.Count;
         PlayClip();
     }
 
     public void RandomClip()
     {
+        if (audioClips == null || audioClips.Count == 0) return;
         index = Random.Range(0, audioClips.Count);
         PlayClip();
     }
 
     public void PlayAtIndex(int value)
     {
-        index = Mathf.Clamp(value, 0, audioClips.Count);
+        if (audioClips == null || audioClips.Count == 0) return;
+        // Fix: Clamp upper bound to Count - 1 so it never points past the last element
+        index = Mathf.Clamp(value, 0, audioClips.Count - 1);
         PlayClip();
     }
 
     public void PauseClip()
     {
-        audioSource.Pause();
+        if (audioSource != null)
+        {
+            audioSource.Pause();
+        }
     }
 
     public void StopClip()
     {
-        audioSource.Stop();
+        if (audioSource != null)
+        {
+            audioSource.Stop();
+        }
     }
 
     public void PlayCurrentClip()
@@ -62,13 +73,29 @@ public class PlaySoundsFromList : MonoBehaviour
 
     private void PlayClip()
     {
-        audioSource.clip = audioClips[Mathf.Abs(index)];
-        audioSource.Play();
+        // Guard against empty lists or unassigned components
+        if (audioClips == null || audioClips.Count == 0 || audioSource == null) return;
+
+        // Ensure index is always valid and in bounds
+        index = Mathf.Clamp(Mathf.Abs(index), 0, audioClips.Count - 1);
+
+        if (audioClips[index] != null)
+        {
+            audioSource.clip = audioClips[index];
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning($"Audio clip at index {index} is missing or null on {gameObject.name}.", this);
+        }
     }
 
     private void OnValidate()
     {
         AudioSource audioSource = GetComponent<AudioSource>();
-        audioSource.loop = shouldLoop;
+        if (audioSource != null)
+        {
+            audioSource.loop = shouldLoop;
+        }
     }
 }

@@ -29187,7 +29187,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -29281,8 +29281,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a895b5e674db04d8b4f8110c068852, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shouldLoop: 1
+  shouldLoop: 0
   audioClips:
+  - {fileID: 8300000, guid: b314d765cfb4862448426bd2b9f2ec13, type: 3}
   - {fileID: 8300000, guid: b314d765cfb4862448426bd2b9f2ec13, type: 3}
 --- !u!65 &1145393438020323227
 BoxCollider:
