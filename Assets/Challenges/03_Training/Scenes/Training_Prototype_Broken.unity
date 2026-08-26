@@ -96,7 +96,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 463413c0baacf4e059d8a811b687c62a,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 5118713afbf2241b1bd25d9eb152139e,
     type: 2}
 --- !u!196 &4
@@ -22011,7 +22012,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1736730002}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!220 &1504979993
 LightProbeGroup:
@@ -25286,8 +25287,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1504979992}
+  m_Children: []
   m_Father: {fileID: 1794745629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1748730798
@@ -44489,6 +44489,7 @@ SceneRoots:
   - {fileID: 986094216}
   - {fileID: 180115051}
   - {fileID: 1221478595}
+  - {fileID: 1504979992}
   - {fileID: 1794745629}
   - {fileID: 66628782}
   - {fileID: 28295285}
