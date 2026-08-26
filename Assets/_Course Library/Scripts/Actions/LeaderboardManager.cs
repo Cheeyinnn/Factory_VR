@@ -13,20 +13,20 @@ public class LeaderboardManager : MonoBehaviour
 
     private class ScoreEntry
     {
-        public string playerName;
+        public string roundName;
         public float time;
 
-        public ScoreEntry(string name, float playerTime)
+        public ScoreEntry(string name, float roundTime)
         {
-            playerName = name;
-            time = playerTime;
+            roundName = name;
+            time = roundTime;
         }
     }
 
     private List<ScoreEntry> scores = new List<ScoreEntry>();
 
-    // Keeps track of how many players have played
-    private int playerNumber = 1;
+    // Keeps track of how many rounds have been completed
+    private int roundNumber = 1;
 
     void Start()
     {
@@ -35,14 +35,14 @@ public class LeaderboardManager : MonoBehaviour
 
     public void AddScore(float time)
     {
-        // Automatically create player name
-        string playerName = "Player " + playerNumber;
+        // Automatically create round name
+        string roundName = "Round " + roundNumber;
 
-        // Next completed attempt becomes next player
-        playerNumber++;
+        // Next completed challenge becomes next round
+        roundNumber++;
 
         // Add result
-        scores.Add(new ScoreEntry(playerName, time));
+        scores.Add(new ScoreEntry(roundName, time));
 
         // Sort fastest to slowest
         scores.Sort((a, b) => a.time.CompareTo(b.time));
@@ -79,7 +79,7 @@ public class LeaderboardManager : MonoBehaviour
 
                 rankTexts[i].text =
                     (i + 1) + ". " +
-                    scores[i].playerName + "     " +
+                    scores[i].roundName + "     " +
                     minutes.ToString("00") + ":" +
                     seconds.ToString("00");
             }
