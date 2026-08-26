@@ -69,16 +69,18 @@ public class XRButton : XRBaseInteractable
     }
 
     public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
+{
+    base.ProcessInteractable(updatePhase);
+
+    if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
     {
-        if(updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic)
+        if (isHovered && hoverInteractor != null && buttonTransform != null)
         {
-            if (isHovered)
-            {
-                float height = FindButtonHeight();
-                ApplyHeight(height);
-            }
+            float height = FindButtonHeight();
+            ApplyHeight(height);
         }
     }
+}
 
     private float FindButtonHeight()
     {
