@@ -4,7 +4,14 @@ using System.Collections.Generic;
 
 public class LeaderboardManager : MonoBehaviour
 {
-    [Header("Leaderboard UI")]
+    [Header("Leaderboard Rows")]
+    public GameObject rank1Row;
+    public GameObject rank2Row;
+    public GameObject rank3Row;
+    public GameObject rank4Row;
+    public GameObject rank5Row;
+
+    [Header("Leaderboard Text")]
     public TMP_Text rank1Text;
     public TMP_Text rank2Text;
     public TMP_Text rank3Text;
@@ -25,7 +32,6 @@ public class LeaderboardManager : MonoBehaviour
 
     private List<ScoreEntry> scores = new List<ScoreEntry>();
 
-    // Keeps track of how many rounds have been completed
     private int roundNumber = 1;
 
     void Start()
@@ -35,19 +41,16 @@ public class LeaderboardManager : MonoBehaviour
 
     public void AddScore(float time)
     {
-        // Automatically create round name
         string roundName = "Round " + roundNumber;
 
-        // Next completed challenge becomes next round
         roundNumber++;
 
-        // Add result
         scores.Add(new ScoreEntry(roundName, time));
 
-        // Sort fastest to slowest
+        // Fastest first
         scores.Sort((a, b) => a.time.CompareTo(b.time));
 
-        // Only keep the fastest Top 5
+        // Keep only Top 5
         if (scores.Count > 5)
         {
             scores.RemoveAt(scores.Count - 1);
@@ -58,6 +61,15 @@ public class LeaderboardManager : MonoBehaviour
 
     private void UpdateLeaderboard()
     {
+        GameObject[] rankRows =
+        {
+            rank1Row,
+            rank2Row,
+            rank3Row,
+            rank4Row,
+            rank5Row
+        };
+
         TMP_Text[] rankTexts =
         {
             rank1Text,
@@ -67,26 +79,39 @@ public class LeaderboardManager : MonoBehaviour
             rank5Text
         };
 
-        for (int i = 0; i < rankTexts.Length; i++)
+        for (int i = 0; i < rankRows.Length; i++)
         {
-            if (rankTexts[i] == null)
-                continue;
-
             if (i < scores.Count)
             {
-                int minutes = Mathf.FloorToInt(scores[i].time / 60f);
-                int seconds = Mathf.FloorToInt(scores[i].time % 60f);
+                // Show this row
+                if (rankRows[i] != null)
+                {
+                    rankRows[i].SetActive(true);
+                }
 
-                rankTexts[i].text =
-                    (i + 1) + ". " +
-                    scores[i].roundName + "     " +
-                    minutes.ToString("00") + ":" +
-                    seconds.ToString("00");
+                int minutes =
+                    Mathf.FloorToInt(scores[i].time / 60f);
+
+                int seconds =
+                    Mathf.FloorToInt(scores[i].time % 60f);
+
+                if (rankTexts[i] != null)
+                {
+                    rankTexts[i].text =
+                        scores[i].roundName +
+                        "\t\t " +
+                        minutes.ToString("00") +
+                        ":" +
+                        seconds.ToString("00");
+                }
             }
             else
             {
-                rankTexts[i].text =
-                    (i + 1) + ". ---";
+                // Hide unused rows
+                if (rankRows[i] != null)
+                {
+                    rankRows[i].SetActive(false);
+                }
             }
         }
     }
